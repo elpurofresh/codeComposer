@@ -1,0 +1,69 @@
+#include "CTS_Layer.h"		// include Capacitive Touch libraries
+#define CHAR_MODE			// used in ifdefs to run characterization code
+#define DELAY 5000			// timer delay – 500ms
+
+#ifdef  CHAR_MODE
+unsigned int dCnt;			// characterization count held here
+#endif
+
+void sleep(unsigned int time)
+{
+  TA0CCR0 = time;
+  TA0CTL = TASSEL_1+MC_1+TACLR;
+  TA0CCTL0 &= ~CCIFG;
+  TA0CCTL0 |= CCIE;
+  __bis_SR_register(LPM3_bits+GIE);
+}
+
+void main(void)
+{
+  WDTCTL = WDTPW + WDTHOLD;  // Stop watchdog timer
+  BCSCTL1 = CALBC1_1MHZ;     // 1MHz DCO calibration
+  DCOCTL = CALDCO_1MHZ;
+  BCSCTL2 |= DIVS_2;         // divide SMCLK by 4 for 250khz
+  BCSCTL3 |= LFXT1S_2;       // LFXT1 = VLO
+
+  P1OUT = 0x00;				 // Clear Port 1 bits
+  P1DIR |= BIT0;			 // Set P1.0 as output pin
+  P2SEL &= ~(BIT6 + BIT7);	 // Configure XIN & XOUT to GPIO
+  P2OUT = 0x00;				 // Drive all Port 2 pins low
+  P2DIR = 0xFF;				 // Configure all Port 2 pins outputs
+
+  TI_CAPT_Init_Baseline(&one_button);
+  TI_CAPT_Update_Baseline(&one_button,5);
+
+  while (1)
+  {
+    #ifdef  CHAR_MODE
+    TI_CAPT_Custom(&one_button,&dCnt);
+    __no_operation(); 		  // Set breakpoint here
+    #endif
+
+	#ifndef CHAR_MODE
+    if(TI_CAPT_Button(&one_button))
+    {
+    P1OUT |= BIT0;            // Turn on center LED
+    }
+    else
+    {
+    P1OUT &= ~BIT0;           // Turn off center LED
+    }
+
+    sleep(DELAY);			  // LPM3 for 500ms delay time
+    #endif
+   }					 	  // close while loop
+  }						      // close main
+
+//*************************************************
+// Timer0_A0 ISR: Disables the timer and exits LPM3
+//*************************************************
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void ISR_Timer0_A0(void)
+{
+  TA0CTL &= ~(MC_1);
+  TA0CCTL0 &= ~(CCIE);
+  __bic_SR_register_on_exit(LPM3_bits+GIE);
+}
+
+
+

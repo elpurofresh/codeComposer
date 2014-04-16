@@ -1,0 +1,432 @@
+******************************************************************************
+                  MSP430 Linker PC v4.0.0                      
+******************************************************************************
+>> Linked Mon Jan 23 16:45:31 2012
+
+OUTPUT FILE NAME:   <Lab10b.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000e5f2
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000100  000000ca  00000036  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000e000   00001fe0  00000714  000018cc  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000000  00000002  RWIX
+  INT03                 0000ffe6   00000002  00000000  00000002  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000000  00000002  RWIX
+  INT06                 0000ffec   00000002  00000000  00000002  RWIX
+  INT07                 0000ffee   00000002  00000000  00000002  RWIX
+  INT08                 0000fff0   00000002  00000000  00000002  RWIX
+  INT09                 0000fff2   00000002  00000000  00000002  RWIX
+  INT10                 0000fff4   00000002  00000002  00000000  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000000  00000002  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.pinit     0    0000e000    00000000     UNINITIALIZED
+
+.sysmem    0    00000200    00000050     UNINITIALIZED
+                  00000200    00000004     rts430.lib : memory.obj (.sysmem)
+                  00000204    0000004c     --HOLE--
+
+.bss       0    00000250    0000002a     UNINITIALIZED
+                  00000250    0000000e     CTS_Layer.obj (.bss)
+                  0000025e    0000000c     Lab10b.obj (.bss)
+                  0000026a    00000008     rts430.lib : memory.obj (.bss)
+                  00000272    00000004                : _lock.obj (.bss)
+                  00000276    00000004                : boot.obj (.bss)
+
+.stack     0    000002b0    00000050     UNINITIALIZED
+                  000002b0    00000002     rts430.lib : boot.obj (.stack)
+                  000002b2    0000004e     --HOLE--
+
+.text      0    0000e000    00000694     
+                  0000e000    000003b2     CTS_Layer.obj (.text:TI_CAPT_Custom)
+                  0000e3b2    0000012a     CTS_HAL.obj (.text:TI_CTS_RO_PINOSC_TA0_WDTp_HAL)
+                  0000e4dc    00000058     Lab10b.obj (.text:main)
+                  0000e534    0000004c     rts430.lib : lsr16.obj (.text)
+                  0000e580    00000046                : autoinit.obj (.text:_auto_init)
+                  0000e5c6    0000002c                : lsl16.obj (.text)
+                  0000e5f2    00000026                : boot.obj (.text:_c_int00_noexit)
+                  0000e618    00000016                : div16u.obj (.text)
+                  0000e62e    00000014                : mult16.obj (.text)
+                  0000e642    00000012                : memcpy.obj (.text:memcpy)
+                  0000e654    00000010     CTS_Layer.obj (.text:TI_CAPT_Init_Baseline)
+                  0000e664    00000010     rts430.lib : epilog.obj (.text)
+                  0000e674    0000000e     CTS_Layer.obj (.text:TI_CAPT_Raw)
+                  0000e682    00000008     CTS_HAL.obj (.text:watchdog_timer)
+                  0000e68a    00000004     rts430.lib : pre_init.obj (.text:_system_pre_init)
+                  0000e68e    00000004                : exit.obj (.text:abort)
+                  0000e692    00000002                : _lock.obj (.text:_nop)
+
+.const     0    0000e694    00000072     
+                  0000e694    00000072     structure.obj (.const)
+
+.cinit     0    0000e706    0000000e     
+                  0000e706    00000006     CTS_Layer.obj (.cinit)
+                  0000e70c    00000006     rts430.lib : memory.obj (.cinit)
+                  0000e712    00000002     --HOLE-- [fill = 0]
+
+.int10     0    0000fff4    00000002     
+                  0000fff4    00000002     CTS_HAL.obj (.int10)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430.lib : boot.obj (.reset)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000250   .bss
+0000e000   .text
+0000004a   ADC10AE0
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000e68e   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+0000005b   CAPD
+00000056   DCOCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+00000000   IE1
+00000002   IFG1
+0000e5c6   I_LSL
+0000e5ee   I_LSL_1
+0000e5dc   I_LSL_10
+0000e5da   I_LSL_11
+0000e5d8   I_LSL_12
+0000e5d6   I_LSL_13
+0000e5d4   I_LSL_14
+0000e5d2   I_LSL_15
+0000e5ec   I_LSL_2
+0000e5ea   I_LSL_3
+0000e5e8   I_LSL_4
+0000e5e6   I_LSL_5
+0000e5e4   I_LSL_6
+0000e5e2   I_LSL_7
+0000e5e0   I_LSL_8
+0000e5de   I_LSL_9
+0000e534   I_LSR
+0000e57a   I_LSR_1
+0000e556   I_LSR_10
+0000e552   I_LSR_11
+0000e54e   I_LSR_12
+0000e54a   I_LSR_13
+0000e546   I_LSR_14
+0000e542   I_LSR_15
+0000e576   I_LSR_2
+0000e572   I_LSR_3
+0000e56e   I_LSR_4
+0000e56a   I_LSR_5
+0000e566   I_LSR_6
+0000e562   I_LSR_7
+0000e55e   I_LSR_8
+0000e55a   I_LSR_9
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+00000041   P1SEL2
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000042   P2SEL2
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000160   TA0CTL
+0000012e   TA0IV
+00000170   TA0R
+0000e000   TI_CAPT_Custom
+0000e654   TI_CAPT_Init_Baseline
+0000e674   TI_CAPT_Raw
+0000e3b2   TI_CTS_RO_PINOSC_TA0_WDTp_HAL
+0000007a   USICCTL
+0000007a   USICKCTL
+0000007b   USICNT
+00000078   USICTL
+00000078   USICTL0
+00000079   USICTL1
+0000007c   USISR
+0000007d   USISRH
+0000007c   USISRL
+00000120   WDTCTL
+00000300   __STACK_END
+00000050   __STACK_SIZE
+00000050   __SYSMEM_SIZE
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+ffffffff   __binit__
+00000250   __bss__
+ffffffff   __c_args__
+0000e706   __cinit__
+0000e618   __divu
+0000027a   __end__
+0000e694   __etext__
+0000e62e   __mpyi
+ffffffff   __pinit__
+0000e618   __remu
+0000e000   __text__
+0000e580   _auto_init
+0000e5f2   _c_int00
+0000e5f2   _c_int00_noexit
+00000276   _cleanup_ptr
+00000278   _dtors_ptr
+00000272   _lock
+0000e692   _nop
+0000fffe   _reset_vector
+000002b0   _stack
+00000200   _sys_memory
+0000e68a   _system_pre_init
+00000274   _unlock
+0000e68e   abort
+00000250   baseCnt
+ffffffff   binit
+00000260   buttonCnt
+0000e706   cinit
+0000025c   ctsStatusReg
+0000e694   down
+0000027a   end
+0000e694   etext
+0000e670   func_epilog_1
+0000e66e   func_epilog_2
+0000e66c   func_epilog_3
+0000e66a   func_epilog_4
+0000e668   func_epilog_5
+0000e666   func_epilog_6
+0000e664   func_epilog_7
+0000e6b2   left
+0000e4dc   main
+0000e642   memcpy
+0000e6bc   middle
+0000e6e2   middle_button
+ffffffff   pinit
+0000e6c6   proximity
+0000025e   proximityCnt
+0000e6f4   proximity_sensor
+0000e69e   right
+0000e6a8   up
+0000e682   watchdog_timer
+0000e6d0   wheel
+00000262   wheelCnt
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+00000002   IFG1
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000041   P1SEL2
+00000042   P2SEL2
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+00000050   __STACK_SIZE
+00000050   __SYSMEM_SIZE
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+00000078   USICTL
+00000078   USICTL0
+00000079   USICTL1
+0000007a   USICCTL
+0000007a   USICKCTL
+0000007b   USICNT
+0000007c   USISR
+0000007c   USISRL
+0000007d   USISRH
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TA0IV
+00000160   TA0CTL
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000170   TA0R
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000200   _sys_memory
+00000250   .bss
+00000250   __bss__
+00000250   baseCnt
+0000025c   ctsStatusReg
+0000025e   proximityCnt
+00000260   buttonCnt
+00000262   wheelCnt
+00000272   _lock
+00000274   _unlock
+00000276   _cleanup_ptr
+00000278   _dtors_ptr
+0000027a   __end__
+0000027a   end
+000002b0   _stack
+00000300   __STACK_END
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000e000   .text
+0000e000   TI_CAPT_Custom
+0000e000   __text__
+0000e3b2   TI_CTS_RO_PINOSC_TA0_WDTp_HAL
+0000e4dc   main
+0000e534   I_LSR
+0000e542   I_LSR_15
+0000e546   I_LSR_14
+0000e54a   I_LSR_13
+0000e54e   I_LSR_12
+0000e552   I_LSR_11
+0000e556   I_LSR_10
+0000e55a   I_LSR_9
+0000e55e   I_LSR_8
+0000e562   I_LSR_7
+0000e566   I_LSR_6
+0000e56a   I_LSR_5
+0000e56e   I_LSR_4
+0000e572   I_LSR_3
+0000e576   I_LSR_2
+0000e57a   I_LSR_1
+0000e580   _auto_init
+0000e5c6   I_LSL
+0000e5d2   I_LSL_15
+0000e5d4   I_LSL_14
+0000e5d6   I_LSL_13
+0000e5d8   I_LSL_12
+0000e5da   I_LSL_11
+0000e5dc   I_LSL_10
+0000e5de   I_LSL_9
+0000e5e0   I_LSL_8
+0000e5e2   I_LSL_7
+0000e5e4   I_LSL_6
+0000e5e6   I_LSL_5
+0000e5e8   I_LSL_4
+0000e5ea   I_LSL_3
+0000e5ec   I_LSL_2
+0000e5ee   I_LSL_1
+0000e5f2   _c_int00
+0000e5f2   _c_int00_noexit
+0000e618   __divu
+0000e618   __remu
+0000e62e   __mpyi
+0000e642   memcpy
+0000e654   TI_CAPT_Init_Baseline
+0000e664   func_epilog_7
+0000e666   func_epilog_6
+0000e668   func_epilog_5
+0000e66a   func_epilog_4
+0000e66c   func_epilog_3
+0000e66e   func_epilog_2
+0000e670   func_epilog_1
+0000e674   TI_CAPT_Raw
+0000e682   watchdog_timer
+0000e68a   _system_pre_init
+0000e68e   C$$EXIT
+0000e68e   abort
+0000e692   _nop
+0000e694   __etext__
+0000e694   down
+0000e694   etext
+0000e69e   right
+0000e6a8   up
+0000e6b2   left
+0000e6bc   middle
+0000e6c6   proximity
+0000e6d0   wheel
+0000e6e2   middle_button
+0000e6f4   proximity_sensor
+0000e706   __cinit__
+0000e706   cinit
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   __pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[162 symbols]

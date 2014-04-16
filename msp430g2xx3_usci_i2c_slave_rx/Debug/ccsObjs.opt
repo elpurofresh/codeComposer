@@ -1,0 +1,1 @@
+-l"./configPkg/linker.cmd" "./msp430g2xx3_usci_i2c_slave_rx.obj" -l"libc.a" "../lnk_msp430g2553.cmd" 

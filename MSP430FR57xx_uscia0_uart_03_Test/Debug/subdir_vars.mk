@@ -1,0 +1,27 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../lnk_msp430fr5739.cmd 
+
+C_SRCS += \
+../MSP430FR57xx_uscia0_uart_03_Test.c 
+
+OBJS += \
+./MSP430FR57xx_uscia0_uart_03_Test.obj 
+
+C_DEPS += \
+./MSP430FR57xx_uscia0_uart_03_Test.pp 
+
+C_DEPS__QUOTED += \
+"MSP430FR57xx_uscia0_uart_03_Test.pp" 
+
+OBJS__QUOTED += \
+"MSP430FR57xx_uscia0_uart_03_Test.obj" 
+
+C_SRCS__QUOTED += \
+"../MSP430FR57xx_uscia0_uart_03_Test.c" 
+
+

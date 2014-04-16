@@ -1,0 +1,12 @@
+// Function Transmits Character from TXByte 
+void Transmit()
+{ 
+  BitCnt = 0xA;                     // Load Bit counter, 8data + ST/SP
+  while (CCR0 != TAR)               // Prevent async capture
+    CCR0 = TAR;                     // Current state of TA counter
+  CCR0 += Bitime;                   // Some time till first bit
+  TXByte |= 0x100;                  // Add mark stop bit to TXByte
+  TXByte = TXByte << 1;             // Add space start bit
+  CCTL0 =  CCIS0 + OUTMOD0 + CCIE;  // TXD = mark = idle
+  while ( CCTL0 & CCIE );           // Wait for TX completion
+}

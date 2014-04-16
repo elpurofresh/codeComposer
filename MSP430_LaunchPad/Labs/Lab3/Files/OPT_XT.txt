@@ -1,0 +1,57 @@
+//***********************************************************
+// Lab3d.c  Optimized code using 1.1MHz DCO/8 as MCLK and 32768 HZ crystal as ACLK
+//
+// Red LED should light only in a fault condition:
+//  - the calibration data was found to be erased
+//  - the crystal failed and ACLK is now running on the VLO
+// If everything works correctly, the green LED should then blink very quickly
+//
+// SFB 1/2012
+//***********************************************************
+
+
+#include <msp430g2231.h>
+
+#ifndef TIMER0_A1_VECTOR
+#define TIMER0_A1_VECTOR    TIMERA1_VECTOR
+#define TIMER0_A0_VECTOR    TIMERA0_VECTOR
+#endif
+
+void FaultRoutine(void);
+
+void main(void)
+{
+WDTCTL = WDTPW + WDTHOLD; 	      // Stop watchdog timer
+
+P1DIR = 0x41;                         // P1.0 & 6 output (red/green LEDs)
+P1OUT = 0;                            // LEDs off
+
+if (CALBC1_1MHZ ==0xFF || CALDCO_1MHZ == 0xFF)
+   FaultRoutine();		      // If calibration data is erased
+ 				      // run FaultRoutine()
+BCSCTL1 = CALBC1_1MHZ;                // Set range
+DCOCTL = CALDCO_1MHZ;                 // Set DCO step + modulation
+
+BCSCTL3 |= LFXT1S_0;        	      // LFXT1 = 32768 crystal
+
+IFG1 &= ~OFIFG;                       // Clear OSCFault flag
+
+BCSCTL2 |= SELM_0 + DIVM_3;           // MCLK = 32768/8
+
+if (IFG1 & OFIFG)		      // If OSCFault is still on
+   FaultRoutine();		      // run FaultRoutine()
+
+while(1)
+ {
+   P1OUT = 0x40; 		      // green LED on
+   _delay_cycles(100);
+   P1OUT = 0; 			      // green LED off
+   _delay_cycles(5000);
+  }
+}
+
+void FaultRoutine(void)
+ {
+   P1OUT = 0x01;              // red LED on
+   while(1); 			      // TRAP
+ }

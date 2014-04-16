@@ -1,0 +1,1 @@
+"./MSP430FR57xx_ta0_02.obj" -l"libc.a" "../lnk_msp430fr5739.cmd" 

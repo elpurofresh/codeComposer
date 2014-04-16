@@ -1,0 +1,202 @@
+******************************************************************************
+                  MSP430 Linker PC v4.0.0                      
+******************************************************************************
+>> Linked Tue Sep 24 16:37:29 2013
+
+OUTPUT FILE NAME:   <msp430g2xx3_uscia0_uart_05_9600.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 000002c8
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MEM                   00000200   0000fdfd  0000019a  0000fc63  RWIX
+  RESET                 0000fffe   0000ffff  00000002  0000fffd  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.pinit     0    00000200    00000000     UNINITIALIZED
+
+.text      0    00000200    0000011a     
+                  00000200    0000004e     msp430g2xx3_uscia0_uart_05_9600.obj (.text:main)
+                  0000024e    00000046     rts430.lib : autoinit.obj (.text:_auto_init)
+                  00000294    00000034     msp430g2xx3_uscia0_uart_05_9600.obj (.text:USCI0RX_ISR)
+                  000002c8    00000026     rts430.lib : boot.obj (.text:_c_int00_noexit)
+                  000002ee    00000012                : memcpy.obj (.text:memcpy)
+                  00000300    00000010                : epilog.obj (.text)
+                  00000310    00000004                : pre_init.obj (.text:_system_pre_init)
+                  00000314    00000004                : exit.obj (.text:abort)
+                  00000318    00000002                : _lock.obj (.text:_nop)
+
+.data      0    00000200    00000000     UNINITIALIZED
+
+.cinit     0    0000031a    00000018     
+                  0000031a    00000015     msp430g2xx3_uscia0_uart_05_9600.obj (.cinit)
+                  0000032f    00000001     --HOLE-- [fill = 0]
+                  00000330    00000002     (.pad.cinit) [fill = 0]
+
+.bss       0    00000332    00000016     UNINITIALIZED
+                  00000332    0000000e     msp430g2xx3_uscia0_uart_05_9600.obj (.bss)
+                  00000340    00000004     rts430.lib : _lock.obj (.bss)
+                  00000344    00000004                : boot.obj (.bss)
+
+.stack     0    00000348    00000050     UNINITIALIZED
+                  00000348    00000002     rts430.lib : boot.obj (.stack)
+                  0000034a    0000004e     --HOLE--
+
+.int07     0    00000398    00000002     
+                  00000398    00000002     msp430g2xx3_uscia0_uart_05_9600.obj (.int07)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430.lib : boot.obj (.reset)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000332   .bss
+00000200   .data
+00000200   .text
+00000314   C$$EXIT
+UNDEFED    IE2
+UNDEFED    IFG2
+UNDEFED    P1DIR
+UNDEFED    P1OUT
+UNDEFED    P1SEL
+UNDEFED    P1SEL2
+UNDEFED    P2DIR
+UNDEFED    P2OUT
+UNDEFED    P3DIR
+UNDEFED    P3OUT
+UNDEFED    UCA0BR0
+UNDEFED    UCA0BR1
+UNDEFED    UCA0CTL1
+UNDEFED    UCA0MCTL
+UNDEFED    UCA0RXBUF
+UNDEFED    UCA0TXBUF
+00000294   USCI0RX_ISR
+UNDEFED    WDTCTL
+00000398   __STACK_END
+00000050   __STACK_SIZE
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+ffffffff   __binit__
+00000332   __bss__
+ffffffff   __c_args__
+0000031a   __cinit__
+00000200   __data__
+00000200   __edata__
+00000348   __end__
+0000031a   __etext__
+ffffffff   __pinit__
+00000200   __text__
+0000024e   _auto_init
+000002c8   _c_int00
+000002c8   _c_int00_noexit
+00000344   _cleanup_ptr
+00000346   _dtors_ptr
+00000340   _lock
+00000318   _nop
+0000fffe   _reset_vector
+00000348   _stack
+00000310   _system_pre_init
+00000342   _unlock
+00000314   abort
+ffffffff   binit
+0000031a   cinit
+00000332   dataLength
+00000200   edata
+00000348   end
+0000031a   etext
+0000030c   func_epilog_1
+0000030a   func_epilog_2
+00000308   func_epilog_3
+00000306   func_epilog_4
+00000304   func_epilog_5
+00000302   func_epilog_6
+00000300   func_epilog_7
+00000200   main
+000002ee   memcpy
+ffffffff   pinit
+00000334   uartBuffer
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+00000050   __STACK_SIZE
+00000200   .data
+00000200   .text
+00000200   __data__
+00000200   __edata__
+00000200   __text__
+00000200   edata
+00000200   main
+0000024e   _auto_init
+00000294   USCI0RX_ISR
+000002c8   _c_int00
+000002c8   _c_int00_noexit
+000002ee   memcpy
+00000300   func_epilog_7
+00000302   func_epilog_6
+00000304   func_epilog_5
+00000306   func_epilog_4
+00000308   func_epilog_3
+0000030a   func_epilog_2
+0000030c   func_epilog_1
+00000310   _system_pre_init
+00000314   C$$EXIT
+00000314   abort
+00000318   _nop
+0000031a   __cinit__
+0000031a   __etext__
+0000031a   cinit
+0000031a   etext
+00000332   .bss
+00000332   __bss__
+00000332   dataLength
+00000334   uartBuffer
+00000340   _lock
+00000342   _unlock
+00000344   _cleanup_ptr
+00000346   _dtors_ptr
+00000348   __end__
+00000348   _stack
+00000348   end
+00000398   __STACK_END
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   __pinit__
+ffffffff   binit
+ffffffff   pinit
+UNDEFED    IE2
+UNDEFED    IFG2
+UNDEFED    P1DIR
+UNDEFED    P1OUT
+UNDEFED    P1SEL
+UNDEFED    P1SEL2
+UNDEFED    P2DIR
+UNDEFED    P2OUT
+UNDEFED    P3DIR
+UNDEFED    P3OUT
+UNDEFED    UCA0BR0
+UNDEFED    UCA0BR1
+UNDEFED    UCA0CTL1
+UNDEFED    UCA0MCTL
+UNDEFED    UCA0RXBUF
+UNDEFED    UCA0TXBUF
+UNDEFED    WDTCTL
+
+[66 symbols]

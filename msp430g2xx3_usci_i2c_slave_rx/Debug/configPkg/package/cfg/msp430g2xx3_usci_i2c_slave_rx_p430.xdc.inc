@@ -1,0 +1,2 @@
+package.xs
+package/cfg/msp430g2xx3_usci_i2c_slave_rx_p430.cfg

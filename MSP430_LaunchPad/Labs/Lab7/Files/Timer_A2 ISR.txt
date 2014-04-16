@@ -1,0 +1,22 @@
+// Timer A0 interrupt service routine
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void Timer_A (void)
+{
+  CCR0 += Bitime;                   // Add Offset to CCR0  
+  if (CCTL0 & CCIS0)                // TX on CCI0B?
+  {
+    if ( BitCnt == 0)
+    {         
+      CCTL0 &= ~ CCIE ;             // All bits TXed, disable interrupt
+    }  
+      
+    else
+    {
+      CCTL0 |=  OUTMOD2;            // TX Space
+      if (TXByte & 0x01)
+      CCTL0 &= ~ OUTMOD2;           // TX Mark
+      TXByte = TXByte >> 1;
+      BitCnt --;
+    }
+  }
+}

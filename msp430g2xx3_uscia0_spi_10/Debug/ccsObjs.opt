@@ -1,0 +1,1 @@
+"./msp430g2xx3_uscia0_spi_10.obj" -l"libc.a" "../lnk_msp430g2553.cmd" 

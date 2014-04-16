@@ -1,0 +1,1 @@
+"./Library/CTS_Layer.obj" "./Library/CTS_HAL.obj" "./structure.obj" "./LAB10a.obj" -l"libc.a" "../lnk_msp430g2553.cmd" 

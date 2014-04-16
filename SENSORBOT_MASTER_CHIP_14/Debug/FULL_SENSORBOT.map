@@ -1,0 +1,511 @@
+******************************************************************************
+                  MSP430 Linker PC v4.0.0                      
+******************************************************************************
+>> Linked Wed Apr 24 15:20:30 2013
+
+OUTPUT FILE NAME:   <FULL_SENSORBOT.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000c732
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000200  00000180  00000080  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000c000   00003fe0  0000098a  00003656  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000000  00000002  RWIX
+  INT03                 0000ffe6   00000002  00000000  00000002  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000000  00000002  RWIX
+  INT06                 0000ffec   00000002  00000000  00000002  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000000  00000002  RWIX
+  INT09                 0000fff2   00000002  00000000  00000002  RWIX
+  INT10                 0000fff4   00000002  00000000  00000002  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000000  00000002  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.pinit     0    0000c000    00000000     UNINITIALIZED
+
+.bss       0    00000200    00000130     UNINITIALIZED
+                  00000200    00000124     main.obj (.bss)
+                  00000324    00000004     rts430.lib : _lock.obj (.bss)
+                  00000328    00000004                : boot.obj (.bss)
+                  0000032c    00000004                : rand.obj (.bss)
+
+.stack     0    000003b0    00000050     UNINITIALIZED
+                  000003b0    00000002     rts430.lib : boot.obj (.stack)
+                  000003b2    0000004e     --HOLE--
+
+.text      0    0000c000    00000886     
+                  0000c000    0000014e     main.obj (.text:runCommRoutine)
+                  0000c14e    0000011e     main.obj (.text:loadData)
+                  0000c26c    000000a0     main.obj (.text:checkStatus)
+                  0000c30c    0000009e     main.obj (.text:processData)
+                  0000c3aa    00000098     main.obj (.text:USCI0RX_ISR)
+                  0000c442    00000094     main.obj (.text:getTime)
+                  0000c4d6    00000066     main.obj (.text:itoa)
+                  0000c53c    0000005a     main.obj (.text:main)
+                  0000c596    00000046     rts430.lib : autoinit.obj (.text:_auto_init)
+                  0000c5dc    00000046     main.obj (.text:reverse)
+                  0000c622    00000038     rts430.lib : rand.obj (.text:rand)
+                  0000c65a    0000002e     main.obj (.text:blinkLEDRednGreen)
+                  0000c688    0000002c     main.obj (.text:configClock)
+                  0000c6b4    0000002c     rts430.lib : div16s.obj (.text)
+                  0000c6e0    0000002a     main.obj (.text:blinkLEDGreen)
+                  0000c70a    00000028     main.obj (.text:blinkLEDRed)
+                  0000c732    00000026     rts430.lib : boot.obj (.text:_c_int00_noexit)
+                  0000c758    00000026                : mult32.obj (.text)
+                  0000c77e    00000020     main.obj (.text:setupUART)
+                  0000c79e    0000001e     main.obj (.text:sleep)
+                  0000c7bc    0000001e     main.obj (.text:sleepHalf)
+                  0000c7da    00000018     main.obj (.text:initUartBuffer)
+                  0000c7f2    00000018     main.obj (.text:storeDataInVar)
+                  0000c80a    00000016     rts430.lib : div16u.obj (.text)
+                  0000c820    00000014     main.obj (.text:string_length)
+                  0000c834    00000012     rts430.lib : memcpy.obj (.text:memcpy)
+                  0000c846    00000010     main.obj (.text:UART_putChar)
+                  0000c856    00000010     rts430.lib : epilog.obj (.text)
+                  0000c866    0000000e     main.obj (.text:turnONSdCard)
+                  0000c874    00000008     main.obj (.text:turnOFFSdCard)
+                  0000c87c    00000004     rts430.lib : pre_init.obj (.text:_system_pre_init)
+                  0000c880    00000004                : exit.obj (.text:abort)
+                  0000c884    00000002                : _lock.obj (.text:_nop)
+
+.cinit     0    0000c886    00000104     
+                  0000c886    000000f9     main.obj (.cinit)
+                  0000c97f    00000001     --HOLE-- [fill = 0]
+                  0000c980    00000008     rts430.lib : rand.obj (.cinit)
+                  0000c988    00000002     --HOLE-- [fill = 0]
+
+.int07     0    0000ffee    00000002     
+                  0000ffee    00000002     main.obj (.int07)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430.lib : boot.obj (.reset)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000200   .bss
+0000c000   .text
+0000004a   ADC10AE0
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000c880   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+0000005b   CAPD
+00000056   DCOCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+00000000   IE1
+00000001   IE2
+00000002   IFG1
+00000003   IFG2
+000002e8   OX
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+00000041   P1SEL2
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000042   P2SEL2
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+00000010   P3REN
+0000001b   P3SEL
+00000043   P3SEL2
+000002e6   PH
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000160   TA0CTL
+0000012e   TA0IV
+00000170   TA0R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000180   TA1CTL
+0000011e   TA1IV
+00000190   TA1R
+0000c846   UART_putChar
+0000005d   UCA0ABCTL
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+0000005f   UCA0IRRCTL
+0000005e   UCA0IRTCTL
+00000064   UCA0MCTL
+00000066   UCA0RXBUF
+00000065   UCA0STAT
+00000067   UCA0TXBUF
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006c   UCB0I2CIE
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000006e   UCB0RXBUF
+0000006d   UCB0STAT
+0000006f   UCB0TXBUF
+0000c3aa   USCI0RX_ISR
+00000120   WDTCTL
+00000400   __STACK_END
+00000050   __STACK_SIZE
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+ffffffff   __binit__
+00000200   __bss__
+ffffffff   __c_args__
+0000c886   __cinit__
+0000c6b4   __divi
+0000c80a   __divu
+00000330   __end__
+0000c886   __etext__
+0000c758   __mpyl
+ffffffff   __pinit__
+0000c6b4   __remi
+0000c80a   __remu
+0000c000   __text__
+0000c596   _auto_init
+0000c732   _c_int00
+0000c732   _c_int00_noexit
+00000328   _cleanup_ptr
+0000032a   _dtors_ptr
+00000324   _lock
+0000c884   _nop
+0000fffe   _reset_vector
+000003b0   _stack
+0000c87c   _system_pre_init
+00000326   _unlock
+0000c880   abort
+000002ec   amb
+ffffffff   binit
+0000c6e0   blinkLEDGreen
+0000c70a   blinkLEDRed
+0000c65a   blinkLEDRednGreen
+000002dc   botID
+000002c6   byteRX
+0000c26c   checkStatus
+0000c886   cinit
+0000c688   configClock
+000002d6   counterTemp
+0000031c   data
+00000200   dataIn
+000002d0   dataLength
+0000025a   dataOut
+00000330   end
+0000c886   etext
+0000c862   func_epilog_1
+0000c860   func_epilog_2
+0000c85e   func_epilog_3
+0000c85c   func_epilog_4
+0000c85a   func_epilog_5
+0000c858   func_epilog_6
+0000c856   func_epilog_7
+0000c442   getTime
+000002e0   has_Children
+000002f4   header
+0000031a   i
+0000c7da   initUartBuffer
+000002e2   is_leaf
+000002de   is_parent
+0000c4d6   itoa
+000002d4   len
+000002d8   lineCnter
+0000c14e   loadData
+0000c53c   main
+0000c834   memcpy
+000002c4   myTimeSlot
+00000322   packet
+000002d2   pcktStartFlag
+ffffffff   pinit
+0000c30c   processData
+000002c5   processStoreDataFinish
+0000c622   rand
+0000c5dc   reverse
+0000c000   runCommRoutine
+000002c8   sdCardCmdFlag
+00000316   secStamp
+000002ee   sec_0
+000002f0   sec_1
+000002f2   sec_2
+000002e4   sendFirsttime
+0000c77e   setupUART
+0000c79e   sleep
+0000c7bc   sleepHalf
+000002da   storeDataCnter
+000002ce   storeDataFlag
+0000c7f2   storeDataInVar
+0000c820   string_length
+000002ca   task
+000002ea   temp
+000002cc   tempBuffCounter
+00000320   time
+00000314   timeSlot
+0000c874   turnOFFSdCard
+0000c866   turnONSdCard
+0000026a   uartBuffer
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000010   P3REN
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000041   P1SEL2
+00000042   P2SEL2
+00000043   P3SEL2
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+00000050   __STACK_SIZE
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+0000005d   UCA0ABCTL
+0000005e   UCA0IRTCTL
+0000005f   UCA0IRRCTL
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000064   UCA0MCTL
+00000065   UCA0STAT
+00000066   UCA0RXBUF
+00000067   UCA0TXBUF
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+0000006c   UCB0I2CIE
+0000006d   UCB0STAT
+0000006e   UCB0RXBUF
+0000006f   UCB0TXBUF
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000011e   TA1IV
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TA0IV
+00000160   TA0CTL
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000170   TA0R
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000180   TA1CTL
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000190   TA1R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000200   .bss
+00000200   __bss__
+00000200   dataIn
+0000025a   dataOut
+0000026a   uartBuffer
+000002c4   myTimeSlot
+000002c5   processStoreDataFinish
+000002c6   byteRX
+000002c8   sdCardCmdFlag
+000002ca   task
+000002cc   tempBuffCounter
+000002ce   storeDataFlag
+000002d0   dataLength
+000002d2   pcktStartFlag
+000002d4   len
+000002d6   counterTemp
+000002d8   lineCnter
+000002da   storeDataCnter
+000002dc   botID
+000002de   is_parent
+000002e0   has_Children
+000002e2   is_leaf
+000002e4   sendFirsttime
+000002e6   PH
+000002e8   OX
+000002ea   temp
+000002ec   amb
+000002ee   sec_0
+000002f0   sec_1
+000002f2   sec_2
+000002f4   header
+00000314   timeSlot
+00000316   secStamp
+0000031a   i
+0000031c   data
+00000320   time
+00000322   packet
+00000324   _lock
+00000326   _unlock
+00000328   _cleanup_ptr
+0000032a   _dtors_ptr
+00000330   __end__
+00000330   end
+000003b0   _stack
+00000400   __STACK_END
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000c000   .text
+0000c000   __text__
+0000c000   runCommRoutine
+0000c14e   loadData
+0000c26c   checkStatus
+0000c30c   processData
+0000c3aa   USCI0RX_ISR
+0000c442   getTime
+0000c4d6   itoa
+0000c53c   main
+0000c596   _auto_init
+0000c5dc   reverse
+0000c622   rand
+0000c65a   blinkLEDRednGreen
+0000c688   configClock
+0000c6b4   __divi
+0000c6b4   __remi
+0000c6e0   blinkLEDGreen
+0000c70a   blinkLEDRed
+0000c732   _c_int00
+0000c732   _c_int00_noexit
+0000c758   __mpyl
+0000c77e   setupUART
+0000c79e   sleep
+0000c7bc   sleepHalf
+0000c7da   initUartBuffer
+0000c7f2   storeDataInVar
+0000c80a   __divu
+0000c80a   __remu
+0000c820   string_length
+0000c834   memcpy
+0000c846   UART_putChar
+0000c856   func_epilog_7
+0000c858   func_epilog_6
+0000c85a   func_epilog_5
+0000c85c   func_epilog_4
+0000c85e   func_epilog_3
+0000c860   func_epilog_2
+0000c862   func_epilog_1
+0000c866   turnONSdCard
+0000c874   turnOFFSdCard
+0000c87c   _system_pre_init
+0000c880   C$$EXIT
+0000c880   abort
+0000c884   _nop
+0000c886   __cinit__
+0000c886   __etext__
+0000c886   cinit
+0000c886   etext
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   __pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[197 symbols]

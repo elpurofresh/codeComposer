@@ -1,0 +1,1 @@
+"./main.obj" "./i2C_master.obj" -l"libc.a" "../lnk_msp430fr5739.cmd" 

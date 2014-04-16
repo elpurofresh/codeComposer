@@ -1,0 +1,145 @@
+MSP430 C/C++ Optimizer                  v3.2.1
+Build Number 1JE6M-KDADEMDK-RTARQ-TAV-ZACIF_T_S_R
+
+		======File-level Analysis Summary======
+
+
+extern unsigned char acceleration_value_is_positive() is called from 2 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern unsigned convert_acceleration_value_to_mgrav() is called from 1 sites in this file.
+    It appears to be inlineable (size = 39 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	acceleration_value_is_positive() (1 times)
+
+extern void display_acceleration() is called from 0 sites in this file.
+    It appears to be inlineable (size = 142 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	as_start() (1 times)
+	is_acceleration_measurement() (1 times)
+	acceleration_value_is_positive() (1 times)
+	display_chars() (2 times)
+	itoa() (1 times)
+	convert_acceleration_value_to_mgrav() (1 times)
+	display_char() (3 times)
+	display_symbol() (8 times)
+	as_stop() (1 times)
+
+extern void do_acceleration_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	as_get_data() (1 times)
+
+extern unsigned char is_acceleration_measurement() is called from 1 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void reset_acceleration() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void sx_acceleration() is called from 0 sites in this file.
+    It appears to be inlineable (size = 20 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	as_get_data() (1 times)
+
+
+These functions may be recursive:
+	display_acceleration()
+	do_acceleration_measurement()
+	sx_acceleration()
+
+Making this function inlineable: sx_acceleration()
+
+Making this function inlineable: reset_acceleration()
+
+Making this function inlineable: is_acceleration_measurement()
+
+Making this function inlineable: do_acceleration_measurement()
+
+Making this function inlineable: acceleration_value_is_positive()
+
+These external functions are called but not defined here:
+	as_get_data()
+	as_stop()
+	display_symbol()
+	display_char()
+	itoa()
+	display_chars()
+	as_start()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void sx_acceleration() is called from 0 sites in this file.
+    It appears to be inlineable (size = 20 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void reset_acceleration() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char is_acceleration_measurement() is called from 1 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void do_acceleration_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char acceleration_value_is_positive() is called from 2 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned convert_acceleration_value_to_mgrav() is called from 1 sites in this file.
+    It appears to be inlineable (size = 39 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	acceleration_value_is_positive() (1 times)
+
+==============================================================================
+
+extern void display_acceleration() is called from 0 sites in this file.
+    It appears to be inlineable (size = 142 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	convert_acceleration_value_to_mgrav() (1 times)
+	acceleration_value_is_positive() (1 times)
+	is_acceleration_measurement() (1 times)
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

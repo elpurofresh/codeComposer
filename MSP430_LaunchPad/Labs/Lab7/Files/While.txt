@@ -1,0 +1,34 @@
+  if (tempSet == 0)
+  {
+  	tempSet = tempRaw;	 // Set reference temp
+  }
+  if (tempSet > tempRaw + 5)	 // test for lo
+  {
+  	P1OUT = BIT6;		 // green LED on
+  	P1OUT &= ~BIT0;		 // red LED off
+  	for (i=0;i<5;i++)
+  	 {	
+  	  TXByte = TxLO[i];
+  	  Transmit();
+  	 }
+  }
+  if (tempSet < tempRaw - 5)	 // test for hi
+  {
+  	P1OUT = BIT0;		 // red LED on
+  	P1OUT &= ~BIT6;		 // green LED off
+  	for (i=0;i<5;i++)
+  	 {	
+  	  TXByte = TxHI[i];
+  	  Transmit();
+  	 }
+  } 
+  if (tempSet <= tempRaw + 2 & tempSet >= tempRaw - 2) 
+  {					 // test for in range
+  	P1OUT &= ~(BIT0 + BIT6); // both LEDs off
+  	for (i=0;i<5;i++)
+  	 {	
+  	  TXByte = TxIN[i];
+  	  Transmit();
+  	 }
+   }
+   

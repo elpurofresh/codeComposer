@@ -1,0 +1,1 @@
+"./I2C_SingleByte_MasterRX.obj" -l"libc.a" "../lnk_msp430fr5739.cmd" 

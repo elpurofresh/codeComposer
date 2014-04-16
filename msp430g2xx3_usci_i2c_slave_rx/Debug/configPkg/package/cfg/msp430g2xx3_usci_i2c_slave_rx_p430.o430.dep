@@ -1,0 +1,9 @@
+package/cfg/msp430g2xx3_usci_i2c_slave_rx_p430.o430: package/cfg/msp430g2xx3_usci_i2c_slave_rx_p430.c C:/ti/xdctools_3_23_03_53/packages/xdc/std.h C:/ti/ccsv5/tools/compiler/msp430_4.1.1/include/stdarg.h C:/ti/ccsv5/tools/compiler/msp430_4.1.1/include/stddef.h C:/ti/grace_1_10_04_36/packages/ti/targets/msp430/std.h C:/ti/xdctools_3_23_03_53/packages/ti/targets/select.h C:/ti/xdctools_3_23_03_53/packages/ti/targets/std.h C:/ti/ccsv5/tools/compiler/msp430_4.1.1/include/stdint.h 
+package/cfg/msp430g2xx3_usci_i2c_slave_rx_p430.c:
+C:/ti/xdctools_3_23_03_53/packages/xdc/std.h:
+C:/ti/ccsv5/tools/compiler/msp430_4.1.1/include/stdarg.h:
+C:/ti/ccsv5/tools/compiler/msp430_4.1.1/include/stddef.h:
+C:/ti/grace_1_10_04_36/packages/ti/targets/msp430/std.h:
+C:/ti/xdctools_3_23_03_53/packages/ti/targets/select.h:
+C:/ti/xdctools_3_23_03_53/packages/ti/targets/std.h:
+C:/ti/ccsv5/tools/compiler/msp430_4.1.1/include/stdint.h:

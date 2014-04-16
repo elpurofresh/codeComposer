@@ -1,0 +1,70 @@
+MSP430 C/C++ Optimizer                  v3.2.1
+Build Number 1JE6M-KDADEMDK-RTARQ-TAV-ZACIF_T_S_R
+
+		======File-level Analysis Summary======
+
+
+extern void battery_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 67 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_symbol() (2 times)
+	adc12_single_conversion() (1 times)
+
+extern void display_battery_V() is called from 0 sites in this file.
+    It appears to be inlineable (size = 59 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (2 times)
+	itoa() (2 times)
+	display_symbol() (3 times)
+
+extern void reset_batt_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+
+These functions may be recursive:
+	battery_measurement()
+	display_battery_V()
+
+Making this function inlineable: reset_batt_measurement()
+
+These external functions are called but not defined here:
+	itoa()
+	display_chars()
+	adc12_single_conversion()
+	display_symbol()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void reset_batt_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_battery_V() is called from 0 sites in this file.
+    It appears to be inlineable (size = 59 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void battery_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 67 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==
